@@ -34,3 +34,12 @@ iRst = rs;
 
 });
 
+//generic
+let gen = (obj:object)=>{
+    let m = Math.floor(Math.random()*100);
+    return{...obj,m};
+}
+
+//to get the output 
+let c  = gen({user:'this is username',score:90});
+console.log(c);
