@@ -35,11 +35,27 @@ iRst = rs;
 });
 
 //generic
-let gen = (obj:object)=>{
+let gen = <T extends object>(obj:T)=>{
     let m = Math.floor(Math.random()*100);
     return{...obj,m};
 }
 
 //to get the output 
-let c  = gen({user:'this is username',score:90});
-console.log(c);
+let c  = gen({user:90,score:90,pass:'my passowrd'});
+
+console.log(c.user);
+//interface
+
+interface Resources<T>{
+    uid:number;
+    email:string;
+    contact:T;
+}
+
+const res:Resources<object | string>={
+    uid:1,
+    email:'example@gmail.com',
+    contact:{name:'adenix92',age:21,pos:'developer'}
+}
+
+console.log(res);
